@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LejonSMP</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <video id="bg-video" class="bg-video" src="assets/background.mp4" autoplay muted loop playsinline></video>
+    <header class="site-header container">
+      <div class="header-bar">
+        <h1 class="site-title" aria-label="LejonSMP">
+          <img class="site-logo" src="assets/lejonsmp.png" alt="LejonSMP logo" />
+        </h1>
+        <nav class="top-nav">
+          <a href="https://discord.gg/9e7bdn75pb" rel="nofollow">Discord / Yardım</a>
+        </nav>
+      </div>
+      <p class="site-subtitle">LejonSMP İçin Gerekli Modlar</p>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <button class="btn btn-primary btn-block" data-file="downloads/Gerekli Modlar.rar" aria-label="Gerekli Modların Tamamını indir"></button>
+        <div class="muted small">İndirme: <strong class="dl-count" data-count-for="downloads/Gerekli Modlar.rar">0</strong></div>
+      </section>
+      <section class="stats">
+        <div class="stat">
+          <div class="stat-value" id="stat-mod-count">0</div>
+          <div class="stat-label">Mod</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="stat-total-downloads">0</div>
+          <div class="stat-label">Toplam İndirme</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="stat-categories">0</div>
+          <div class="stat-label">Kategori</div>
+        </div>
+      </section>
+      <section class="accordion">
+        <button id="toggle-mods" class="btn btn-surface btn-block" aria-expanded="false">Tüm Modları Teker Teker Görmek İçin Tıkla</button>
+        <div id="mods-panel" class="accordion-panel">
+          <div class="toolbar sticky">
+            <input id="mod-search" type="search" placeholder="Mod ara..." aria-label="Mod ara" />
+            <select id="mod-category" aria-label="Kategori">
+              <option value="all">Tüm Kategoriler</option>
+            </select>
+            <select id="mod-sort" aria-label="Sırala">
+              <option value="ad-asc">Ada göre (A-Z)</option>
+              <option value="ad-desc">Ada göre (Z-A)</option>
+              <option value="count-desc">İndirme (çoktan aza)</option>
+              <option value="count-asc">İndirme (azdan çoğa)</option>
+            </select>
+            <div class="muted small"><span id="mod-count">0</span> mod</div>
+          </div>
+          <section id="mods-grid" class="grid"></section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer container">
+      <p class="muted"><span id=""></span></p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+  </html>
+
+
