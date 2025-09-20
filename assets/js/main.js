@@ -372,13 +372,17 @@
 
     // Yapay küçük gecikme (UI hissi için)
     setTimeout(function(){
-      // İndirme başlat: görünmez <a download> oluştur
-      var a = document.createElement('a');
-      a.href = file;
-      a.setAttribute('download', '');
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
+      // Dış bağlantılar için yeni sekmede aç; yerel dosyalar için indirme başlat
+      if (/^https?:\/\//i.test(file)){
+        window.open(file, '_blank', 'noopener');
+      } else {
+        var a = document.createElement('a');
+        a.href = file;
+        a.setAttribute('download', '');
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      }
 
       // Sayaç güncelle
       counts[file] = (counts[file] || 0) + 1;
